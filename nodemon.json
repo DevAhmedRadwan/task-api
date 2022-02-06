@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": ["data/*", "README.md", ".git", "node_modules/", "dist/", "coverage/"],
+  "watch": ["src/"],
+  "execMap": {
+    "ts": "node -r ts-node/register"
+  },
+  "events": {
+    "restart": "clear"
+  },
+  "ext": "js,json,ts"
+}
