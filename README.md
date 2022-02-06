@@ -43,4 +43,5 @@ becaise i don't intend on deploying this project
 
 # warning
 
-there is authentication or authrization so all users can access all the tasks
+- there is authentication or authrization so all users can access all the tasks
+- data saved in memory so any restart will remove any change done to it

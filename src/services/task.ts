@@ -16,7 +16,7 @@ function update(id: string, task: ITaskModel): ITaskModel {
   return taskModel.update(id, task);
 }
 
-function remove(id: string): ITaskModel {
+function remove(id: string): ITaskModel | null {
   return taskModel.remove(id);
 }
 
