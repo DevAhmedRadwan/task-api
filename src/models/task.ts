@@ -33,13 +33,16 @@ function find(search: string | undefined): ITaskModel[] {
 
 function findById(id: string | undefined): ITaskModel[] {
   try {
+    // load task data
+    let data = JSON.parse(fs.readFileSync(taskFilePath, "utf8"));
+
     // the returned tasks
-    let tasks = dbTasks;
+    let tasks = data.tasks;
 
     // if there is a search string
     if (id) {
       // find all tasks that has title or description that match this search
-      tasks = dbTasks.filter((t: ITaskModel) => t.id == id) || [];
+      tasks = data.tasks.filter((t: ITaskModel) => t.id == id) || [];
     }
 
     // return all tasks
