@@ -1,5 +1,5 @@
 {
-  "name": "task",
+  "name": "todo-api",
   "version": "0.1.0",
   "description": "this is a very simple task management api",
   "main": "dist/index.js",
