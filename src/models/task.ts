@@ -31,6 +31,24 @@ function find(search: string | undefined): ITaskModel[] {
   }
 }
 
+function findById(id: string | undefined): ITaskModel[] {
+  try {
+    // the returned tasks
+    let tasks = dbTasks;
+
+    // if there is a search string
+    if (id) {
+      // find all tasks that has title or description that match this search
+      tasks = dbTasks.filter((t: ITaskModel) => t.id == id) || [];
+    }
+
+    // return all tasks
+    return tasks;
+  } catch (err) {
+    throw new CustomError(INTERNAL_SERVER_ERROR, "model error", err);
+  }
+}
+
 export function create(task: ITaskModel): ITaskModel {
   try {
     // load task data
@@ -97,6 +115,7 @@ export function remove(id: String) {
 
 export default {
   find,
+  findById,
   create,
   update,
   remove,

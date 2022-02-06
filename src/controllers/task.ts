@@ -3,10 +3,10 @@ import { OK, CREATED } from "../constants/response-status";
 import taskService from "../services/task";
 
 async function get(req: Request, res: Response, next: NextFunction) {
-  type ReqQuery = { search?: string };
+  type ReqQuery = { id?: string; search?: string };
   try {
-    let { search }: ReqQuery = req.query;
-    let tasks = taskService.get(search);
+    let { id, search }: ReqQuery = req.query;
+    let tasks = taskService.get(id, search);
     res.status(OK).send({ message: "tasks retrieved", data: tasks });
   } catch (error: any) {
     next(error);

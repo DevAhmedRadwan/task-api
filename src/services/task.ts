@@ -1,10 +1,15 @@
 import ITaskModel from "../types/task";
 import taskModel from "../models/task";
 
-function get(search: string | undefined): ITaskModel[] {
+function get(id: string | undefined, search: string | undefined): ITaskModel[] {
+  if (id) {
+    return taskModel.findById(id);
+  }
+
   if (search) {
     return taskModel.find(search);
   }
+
   return taskModel.find(undefined);
 }
 
