@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  task-api:
-    image: task-api:latest
+  todo-api:
+    image: todo-api:latest
     env_file:
       - ./.dev.env
     volumes:
