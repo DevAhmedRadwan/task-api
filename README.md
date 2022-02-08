@@ -1,6 +1,6 @@
 # todo api
 
-this is a very simple task management api
+this is a very simple task management api made with nodejs(expressjs)
 
 # how to start with docker
 
@@ -13,6 +13,8 @@ this is a very simple task management api
 
 # how to start without docker
 
+- need to have nodejs and npm
+- use "npm i" to get all the dependancies
 - update the nodemon.json by adding this:
   "env": {
   "NODE_ENV": "development",
@@ -38,7 +40,7 @@ this is a very simple task management api
 
 <p>
 there is no docker file for building or deploying only for development
-becaise i don't intend on deploying this project
+because i don't intend on deploying this project for now
 </p>
 
 # warning
