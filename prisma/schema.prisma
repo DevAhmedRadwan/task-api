@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  @@map(name:"task")
+  id Int @default(autoincrement()) @id
+  title String @db.VarChar(255)
+  description String @db.VarChar(255)
+}

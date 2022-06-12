@@ -6,6 +6,7 @@ this is a very simple task management api made with nodejs(expressjs)
 
 - need to have docker on your system
 - create .dev.env file from .example.env and customize it for your enviroment
+- create .db.dev.env file from .db.example.env and customize it for your enviroment
 - build the api docker images "docker build . -t todo-api"
 - start the container by excuting this command "docker-compose up" or lookup the commands section for help
 - stop project by ctrl+c
@@ -22,6 +23,13 @@ this is a very simple task management api made with nodejs(expressjs)
   },
 - use this command "npm run dev" to run in dev environment
 
+# all servers
+  - adminer server
+    - this is the portal to interact with the data base and system will be mysql and the server will be 127.0.0.1
+  - mysql server
+    - is the database that adminer will connect to
+  - todo-api
+    - is the pai for the task management (the src code)
 # routes
 
 - GET /api/tasks/

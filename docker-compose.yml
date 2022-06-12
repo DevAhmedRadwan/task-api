@@ -1,6 +1,25 @@
 version: "3.9"
 
 services:
+  todo-db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes: 
+      - ./db:/var/lib/mysql
+    restart: always
+    env_file:
+      - ./.db.dev.env
+    logging:
+      driver: none
+    network_mode: host
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - todo-db
+    logging:
+      driver: none
+    network_mode: host
   todo-api:
     image: todo-api:latest
     env_file:
@@ -8,4 +27,6 @@ services:
     volumes:
       - .:/api/
     command: npm run dev
+    depends_on:
+      - todo-db
     network_mode: host
